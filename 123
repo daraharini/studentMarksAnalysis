@@ -1,0 +1,36 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Image Carousel Script
+    let currentSlide = 0; // Keeps track of the current slide index
+    const slides = document.querySelectorAll('.carousel-images img'); // All slides
+    const totalSlides = slides.length; // Total number of slides
+
+    // Function to move the slide in a given direction
+    function moveSlide(direction) {
+        currentSlide += direction;
+
+        // Loop back or forward based on the direction
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1; // Go to the last slide
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0; // Return to the first slide
+        }
+
+        // Apply the transform property to move the carousel
+        document.querySelector('.carousel-images').style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Automatic Slide Change every 3 seconds
+    setInterval(() => {
+        moveSlide(1); // Move to the next slide
+    }, 3000);
+</script>

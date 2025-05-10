@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Nanak University - Marks Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide-icons"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sliding Image Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="assests/logo.jpeg" alt="GNU Logo" class="w-12 h-12 rounded-full">
+                <span class="text-xl font-bold text-purple-600">Guru Nanak University</span>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="text-gray-700 hover:text-purple-600 transition">Home</a></li>
+                    <li><a href="#features" class="text-gray-700 hover:text-purple-600 transition">Features</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-purple-600 transition">About</a></li>
+                    <li><a href="marks.html" class="text-gray-700 hover:text-purple-600 transition">Marks</a></li>
+                    <!-- Changed href -->
+                    <li><a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Sliding Images -->
+    <section id="home" class="min-h-screen flex items-center gradient-bg text-white pt-16">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 items-center">
+            <!-- Text Content -->
+            <div data-aos="fade-right">
+                <h1 class="text-5xl font-bold mb-6 leading-tight">
+                    Empowering Education <br>with Smart Technology
+                </h1>
+                <p class="text-xl mb-8 opacity-90">
+                    Transform academic performance tracking with cutting-edge analytics and insights.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#features"
+                        class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-100 transition">
+                        Explore Features
+                    </a>
+                    <a href="#contact"
+                        class="border-2 border-white px-6 py-3 rounded-full hover:bg-white hover:text-purple-600 transition">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sliding Images Carousel -->
+            <div class="hidden md:block carousel-container relative overflow-hidden" data-aos="fade-left">
+                <div class="carousel-images flex" style="transition: transform 0.5s ease-in-out;">
+                    <img src="assests/gnu campus.jpg" alt="Academic Analytics" class="w-full flex-shrink-0">
+                    <img src="assests/events.jpg" alt="Smart Technology" class="w-full flex-shrink-0">
+                    <img src="assests/gnu campus.jpg" alt="Performance Tracking" class="w-full flex-shrink-0">
+                </div>
+                <!-- Carousel Navigation Buttons -->
+                <button
+                    class="carousel-button prev absolute top-1/2 left-4 transform -translate-y-1/2 text-4xl text-white bg-black/30 px-3 py-1 rounded-full"
+                    onclick="moveSlide(-1)">
+                    &#10094;
+                </button>
+                <button
+                    class="carousel-button next absolute top-1/2 right-4 transform -translate-y-1/2 text-4xl text-white bg-black/30 px-3 py-1 rounded-full"
+                    onclick="moveSlide(1)">
+                    &#10095;
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Innovative Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center" data-aos="zoom-in">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-layout-dashboard text-purple-600">
+                            <rect width="7" height="9" x="3" y="3" rx="1" />
+                            <rect width="7" height="5" x="14" y="3" rx="1" />
+                            <rect width="7" height="9" x="14" y="12" rx="1" />
+                            <rect width="7" height="5" x="3" y="16" rx="1" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Interactive Dashboard</h3>
+                    <p class="text-gray-600">Comprehensive visual insights into academic performance with real-time
+                        charts and analytics.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center" data-aos="zoom-in"
+                    data-aos-delay="200">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-file-text text-purple-600">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" x2="8" y1="13" y2="13" />
+                            <line x1="16" x2="8" y1="17" y2="17" />
+                            <line x1="10" x2="8" y1="9" y2="9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Custom Reports</h3>
+                    <p class="text-gray-600">Generate detailed, personalized performance reports with advanced filtering
+                        options.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift text-center" data-aos="zoom-in"
+                    data-aos-delay="400">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell-ring text-purple-600">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                            <path d="M4 2L2 4" />
+                            <path d="M22 4l-2-2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Alerts</h3>
+                    <p class="text-gray-600">Real-time notifications and performance tracking for students and
+                        administrators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-gray-800">About Guru Nanak University</h2>
+            <p class="text-xl max-w-3xl mx-auto text-gray-600 leading-relaxed">
+                At Guru Nanak University, we are pioneering educational technology to transform academic performance
+                tracking. Our Student Marks Analysis System leverages advanced analytics to provide deep insights,
+                enabling personalized learning experiences and data-driven decision-making.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Get in Touch</h2>
+            <div class="max-w-xl mx-auto bg-white/10 backdrop-blur-lg p-8 rounded-xl">
+                <form>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm">Name</label>
+                        <input type="text"
+                            class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm">Email</label>
+                        <input type="email"
+                            class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block mb-2 text-sm">Message</label>
+                        <textarea
+                            class="w-full px-3 py-2 bg-white/20 backdrop-blur-sm rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            rows="4" required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-100 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <p>&copy; 2024 Guru Nanak University. All Rights Reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-purple-400 transition"><i data-lucide="facebook"></i></a>
+                <a href="#" class="hover:text-purple-400 transition"><i data-lucide="twitter"></i></a>
+                <a href="#" class="hover:text-purple-400 transition"><i data-lucide="linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Image Carousel Script
+        let currentSlide = 0; // Keeps track of the current slide index
+        const slides = document.querySelectorAll('.carousel-images img'); // All slides
+        const totalSlides = slides.length; // Total number of slides
+
+        // Function to move the slide in a given direction
+        function moveSlide(direction) {
+            currentSlide += direction;
+
+            // Loop back or forward based on the direction
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1; // Go to the last slide
+            } else if (currentSlide >= totalSlides) {
+                currentSlide = 0; // Return to the first slide
+            }
+
+            // Apply the transform property to move the carousel
+            document.querySelector('.carousel-images').style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Automatic Slide Change every 3 seconds
+        setInterval(() => {
+            moveSlide(1); // Move to the next slide
+        }, 3000);
+    </script>
+
+</body>
+
+</html>
